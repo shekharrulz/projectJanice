@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WebsocketRunnerService } from './websocket-runner.service';
+import { DataManagerService } from './data-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,10 @@ export class AppComponent {
   title = 'projectJanice';
   serverStatus:string = "off";
   stompclient:any;
-  loggedInStatus:any;
-  destin:any = '/topic/notification';
+  destin:any = '/server/notification';
   unsub:any;
 
-  constructor(private sock: WebsocketRunnerService){
+  constructor(private sock: WebsocketRunnerService, private data: DataManagerService){
     this.webSockServiceConnect();
     this.stompclient.debug;
   }
@@ -36,8 +36,8 @@ export class AppComponent {
   );
   }
 
-  dataSender(data: any){
-    this.stompclient.send("/app/message",{},data);
+  dataSender(data: any,sender: any){
+    this.stompclient.send(sender,{},data);
   }
 
   setLoggedInStatus(value:boolean){
@@ -45,8 +45,14 @@ export class AppComponent {
   }
   webSockSubscriber(){
     this.unsub = this.stompclient.subscribe(this.destin, notifications => {
-    this.loggedInStatus = JSON.parse(notifications.body).loggedInStatus;
-    console.log(this.loggedInStatus);
+    this.data.sendMessage(notifications.body);
+    });  
+  }
+
+  webSockJSONSubscriber(){
+    this.unsub = this.stompclient.subscribe(this.destin, notifications => {
+    this.data = JSON.parse(notifications.body);
+    console.log(this.data);
     });
   }
 }

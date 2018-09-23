@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AppComponent } from './app.component';
 import { WebsocketRunnerService } from './websocket-runner.service';
 
 @Injectable({

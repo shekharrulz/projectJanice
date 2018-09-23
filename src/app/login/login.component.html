@@ -1,41 +1,44 @@
-<div class="container py-5">
-  <div class="row">
-      <div class="col-md-12">
-          <h2 class="text-center text-black mb-4">Project Janice</h2>
-          <div class="row">
-              <div class="col-md-6 mx-auto">
+Server is {{this.sock.serverStatus}}
+<div class="container">
+    <div class="row">
+        <h2 class="center-align text-black m4">Project Janice</h2>
+        <div class="row valign-wrapper">
+            <div class="col s6 offset-s3 valign">
+                <!-- form card login -->
+                <div class="card grey lighten-2">
+                    <div class="card-content white">
+                        <span class="card-title">Login</span>
+                    </div>
+                    <div class="card-body center">
+                        <form (submit)=loginEvent($event) class="form" role="form" autocomplete="off" id="formLogin">
+                            <div class="form-group input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <label for="uname1">Username</label>
+                                <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1"
+                                    required autofocus>
+                            </div>
+                            <div class="form-group input-field col s12">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <label>Password</label>
+                                <input type="password" class="form-control form-control-lg rounded-0" id="pwd1"
+                                    required autofocus>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s11">
+                                    <input type="submit" mz-button class="ng-tns-c17-2 btn waves-effect waves-light" id="btnLogin" value="Login">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/card-block-->
+                </div>
+                <!-- /form card login -->
 
-                  <!-- form card login -->
-                  <div class="card rounded-0">
-                      <div class="card-header">
-                          <h3 class="mb-0">Login</h3>
-                      </div>
-                      <div class="card-body">
-                          <form (submit)=loginEvent($event) class="form" role="form" autocomplete="off" id="formLogin" >
-                              <div class="form-group">
-                                  <label for="uname1">Username</label>
-                                  <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required autofocus >
-                              </div>
-                              <div class="form-group">
-                                  <label>Password</label>
-                                  <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required autofocus >
-                              </div>
-                              <input type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" value="Login">
-                          </form>
-                      </div>
-                      <!--/card-block-->
-                  </div>
-                  <!-- /form card login -->
-
-              </div>
+            </div>
 
 
-          </div>
-          <!--/row-->
-
-      </div>
-      <!--/col-->
-  </div>
-  <!--/row-->
+        </div>
+        <!--/row-->
+    </div>
 </div>
 <!--/container-->

@@ -1,0 +1,144 @@
+<mz-navbar>
+  <a href="#" class="brand-logo center">Logo</a>
+  <mz-navbar-item-container [align]="'left'">
+    <mz-navbar-item>
+      <a mz-button
+        [float]="true"
+        id="btn-sidenav-demo">
+        <i _ngcontent-c0="" mz-icon-mdi="" class="mdi mdi-menu mdi-24px"></i>
+      </a>
+  </mz-navbar-item>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container [align]="'right'">
+    <mz-navbar-item><a href="#">Sass</a></mz-navbar-item>
+    <mz-navbar-item><a href="#">Components</a></mz-navbar-item>
+    <mz-navbar-item><a routerLink="js">JavaScript</a></mz-navbar-item>
+  </mz-navbar-item-container>
+</mz-navbar>
+
+<mz-sidenav
+  [id]="'sidenav-demo'"
+  [collapseButtonId]="'btn-sidenav-demo'">
+  <mz-sidenav-header>
+    projectJanice
+  </mz-sidenav-header>
+  <mz-sidenav-subheader>Room Select</mz-sidenav-subheader>
+  <mz-sidenav-link [active]="true">
+    <a href="#">ROOM 1</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link [active]="true">
+    <a href="#">ROOM 2</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link [active]="true">
+    <a href="#">ROOM 3</a>
+  </mz-sidenav-link>
+</mz-sidenav>
+
+<div class="row">
+<div class="col s12 m4">
+<mz-card
+  class="blue-grey darken-1 white-text"
+  [horizontal]="true"
+  [hoverable]="true">
+  <mz-card-title>
+    Equipment 1
+  </mz-card-title>
+  <mz-card-content>
+      <button mz-button [large]="true" (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}" >{{status}}</button>
+  </mz-card-content>
+  <mz-card-action>
+      <ngx-gauge [type]="gaugeType" 
+      [value]="gaugeValue" 
+      [label]="gaugeLabel"  
+      [append]="gaugeAppendText">
+</ngx-gauge>
+<ngx-gauge [type]="gaugeType" 
+      [value]="gaugeValue" 
+      [label]="gaugeLabel"  
+      [append]="gaugeAppendText">
+</ngx-gauge>
+  </mz-card-action>
+</mz-card>
+</div>
+
+<div class="col s12 m4">
+    <mz-card
+      class="blue-grey darken-1 white-text"
+      [horizontal]="true"
+      [hoverable]="true">
+      <mz-card-title>
+        Equipment 2
+      </mz-card-title>
+      <mz-card-content>
+          <button mz-button [large]="true" (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}" >{{status}}</button>
+      </mz-card-content>
+      <mz-card-action>
+          <ngx-gauge [type]="gaugeType" 
+          [value]="gaugeValue" 
+          [label]="gaugeLabel"  
+          [append]="gaugeAppendText">
+    </ngx-gauge>
+    <ngx-gauge [type]="gaugeType" 
+          [value]="gaugeValue" 
+          [label]="gaugeLabel"  
+          [append]="gaugeAppendText">
+    </ngx-gauge>
+      </mz-card-action>
+    </mz-card>
+    </div>
+
+    <div class="col s12 m4">
+        <mz-card
+          class="blue-grey darken-1 white-text"
+          [horizontal]="true"
+          [hoverable]="true">
+          <mz-card-title>
+            Equipment 3
+          </mz-card-title>
+          <mz-card-content>
+              <button mz-button [large]="true" (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}" >{{status}}</button>
+          </mz-card-content>
+          <mz-card-action>
+              <ngx-gauge [type]="gaugeType" 
+              [value]="gaugeValue" 
+              [label]="gaugeLabel"  
+              [append]="gaugeAppendText">
+        </ngx-gauge>
+        <ngx-gauge [type]="gaugeType" 
+              [value]="gaugeValue" 
+              [label]="gaugeLabel"  
+              [append]="gaugeAppendText">
+        </ngx-gauge>
+          </mz-card-action>
+        </mz-card>
+        </div>
+
+        <div class="col s12 m4">
+            <mz-card
+              class="blue-grey darken-1 white-text"
+              [horizontal]="true"
+              [hoverable]="true">
+              <mz-card-title>
+                Equipment 1
+              </mz-card-title>
+              <mz-card-content>
+                  <button mz-button [large]="true" (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}" >{{status}}</button>
+              </mz-card-content>
+              <mz-card-action>
+                  <ngx-gauge [type]="gaugeType" 
+                  [value]="gaugeValue" 
+                  [label]="gaugeLabel"  
+                  [append]="gaugeAppendText">
+            </ngx-gauge>
+            <ngx-gauge [type]="gaugeType" 
+                  [value]="gaugeValue" 
+                  [label]="gaugeLabel"  
+                  [append]="gaugeAppendText">
+            </ngx-gauge>
+              </mz-card-action>
+            </mz-card>
+            </div>
+
+</div>
